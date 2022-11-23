@@ -1,0 +1,9 @@
+"Variables"
+CPC = 1
+Cookies=0
+Cost = 500
+
+"Macros"
+click: Cookies=[Cookies+CPC] | Cookies
+upgrade: CPC=[CPC+1*(Cookies>Cost)] | Cookies=[Cookies-Cost*(Cookies>Cost)] | CPC
+upgrade_all: CPC=[CPC+floor(Cookies/Cost)] | Cookies=[Cookies%Cost] | CPC
